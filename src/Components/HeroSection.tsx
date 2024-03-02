@@ -18,9 +18,12 @@ export default function HeroSection() {
           journey today. Whether you're a beginner or looking to refine your
           skills, join us to unlock your true potential.
         </p>
-        <div className="mt-4">
+        <div className="mt-10">
           <Link href="/courses">
-            <Button className="bg-white dark:bg-black text-black dark:text-white border-neutral-200 dark:border-slate-800">
+            <Button
+              borderRadius="999px"
+              className="bg-white dark:bg-black text-black dark:text-white border-neutral-200 dark:border-black"
+            >
               Explore Courses
             </Button>
           </Link>

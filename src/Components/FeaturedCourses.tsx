@@ -1,5 +1,5 @@
 "use client";
-import courseData from "@/Data/music_courses.json";
+import data from "@/Data/music_courses.json";
 import Link from "next/link";
 import { BackgroundGradient } from "./ui/background-gradient";
 
@@ -14,7 +14,7 @@ interface Course {
 }
 
 export default function FeaturedCourses() {
-  const feturedCourses = courseData.courses.filter(
+  const feturedCourses = data.courses.filter(
     (course: Course) => course.isFeatured
   );
   return (
