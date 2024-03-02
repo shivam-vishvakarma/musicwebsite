@@ -1,6 +1,6 @@
 "use client";
 import { cn } from "@/Utils/cn";
-import React, { useEffect, useRef, useState } from "react";
+import React, { useCallback, useEffect, useRef, useState } from "react";
 import { createNoise3D } from "simplex-noise";
 
 export const WavyBackground = ({
@@ -46,7 +46,7 @@ export const WavyBackground = ({
     }
   };
 
-  const init = () => {
+  const init = useCallback(() => {
     canvas = canvasRef.current;
     ctx = canvas.getContext("2d");
     w = ctx.canvas.width = window.innerWidth;
@@ -59,7 +59,7 @@ export const WavyBackground = ({
       ctx.filter = `blur(${blur}px)`;
     };
     render();
-  };
+  }, []);
 
   const waveColors = colors ?? [
     "#38bdf8",
