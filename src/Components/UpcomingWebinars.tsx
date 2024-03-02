@@ -3,6 +3,13 @@ import Link from "next/link";
 import data from "@/Data/music_courses.json";
 import { HoverEffect } from "./ui/card-hover-effect";
 
+interface Webinar {
+  title: string;
+  description: string;
+  slug: string;
+  isFeatured: boolean;
+}
+
 export default function UpcomingWebinars() {
   const webinars = data.featuredWebinars;
   return (
@@ -18,7 +25,7 @@ export default function UpcomingWebinars() {
         </div>
         <div className="mt-10">
           <HoverEffect
-            items={webinars.map((webi) => ({
+            items={webinars.map((webi: Webinar) => ({
               title: webi.title,
               description: webi.description,
               link: `/webinars/${webi.slug}`,
